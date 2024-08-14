@@ -1,4 +1,4 @@
-name: ui-patterns-contrib
+name: keytec-develop
 type: drupal10
 docroot: web
 php_version: "8.3"
