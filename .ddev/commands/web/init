@@ -1,0 +1,23 @@
+#!/bin/bash
+
+## Description: Clone and install UI Patterns
+## Usage: init
+## Example: "ddev init"
+
+# Abort if anything fails
+set -e
+
+echo "composer install"
+composer install
+
+CUSTOM_FOLDER="web/modules/custom"
+
+mkdir -p $CUSTOM_FOLDER
+if [ ! -d "$CUSTOM_FOLDER/ui_patterns" ]; then
+  cd $CUSTOM_FOLDER
+  git clone https://git.drupalcode.org/project/ui_patterns.git
+fi
+
+drush si -y
+drush en ui_patterns ui_patterns_field_formatters ui_patterns_layouts ui_patterns_views -y
+drush cr

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## Description: Run phpstan
+## Usage: phpstan
+## Example: "ddev phpstan"
+
+# Abort if anything fails
+set -e
+
+phpstan analyse --no-interaction  --memory-limit=-1  -- web/modules/custom/ui_patterns/

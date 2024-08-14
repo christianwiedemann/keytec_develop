@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Run phpcbf
+## Usage: phpcbf
+## Example: "ddev phpcbf"
+
+# Abort if anything fails
+set -e
+phpcbf $*

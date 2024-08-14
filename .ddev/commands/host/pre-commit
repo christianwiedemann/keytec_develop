@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Description: Run pre-commit
+## Usage: pre-commit
+## Example: "ddev pre-commit"
+
+# Abort if anything fails
+set -e
+ddev phpcs
+ddev phpstan
+ddev phpunit
