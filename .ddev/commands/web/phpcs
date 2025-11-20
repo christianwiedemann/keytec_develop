@@ -6,4 +6,13 @@
 
 # Abort if anything fails
 set -e
-phpcs $*
+#!/bin/bash
+
+## Description: Run phpcs
+## Usage: phpcs
+## Example: "ddev phpcs"
+
+# Abort if anything fails
+set -e
+
+phpcs --ignore="*.md,node_modules,dist" --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml /var/www/html/web/modules/custom/$1

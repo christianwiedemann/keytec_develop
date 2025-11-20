@@ -7,4 +7,4 @@
 # Abort if anything fails
 set -e
 
-phpstan analyse --no-interaction  --memory-limit=-1  -- web/modules/custom/ui_patterns/
+phpstan analyse web/modules/custom/$1 --no-interaction  -c web/modules/custom/$1/phpstan.neon --memory-limit=-1
